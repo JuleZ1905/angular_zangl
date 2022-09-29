@@ -1,0 +1,30 @@
+.header {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: #000;
+}
+
+.home-link {
+  color: white;
+}
+a {
+  text-decoration: none;
+}
+.tasks {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5%;
+}
+.task-item {
+  box-shadow: 0 0 20px 2px lightgrey;
+  margin: 10px;
+  border-radius: 15px;
+  width: 60%;
+}
+
+.task-item:hover{
+    box-shadow: 0 0 20px 2px grey;
+    transition: .2s ease-in-out;
+}

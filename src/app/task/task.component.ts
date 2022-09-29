@@ -5,19 +5,20 @@ import { Task } from '../interfaces';
   selector: 'app-task',
   template: `
     <div class="task" *ngIf="!isAddTask">
-      <h2>{{ task.name }}</h2>
-      <p>{{ task.description }}</p>
+      <h2 class="task-name">{{ task.name }}</h2>
+      <p class="task-desc">{{ task.description }}</p>
+      <mat-checkbox class="task-checkbox"></mat-checkbox>
     </div>
     <div class="addTask">
-      <button
+      <!-- <button
         mat-fab
         color="warn"
       >
-        <mat-icon class="">delete</mat-icon>
-      </button>
+        <mat-icon class="delete-btn">delete</mat-icon>
+      </button> -->
     </div>
   `,
-  styles: ['.task {padding: 30px}'],
+  styleUrls: ['./task.component.css'],
 })
 export class TaskComponent implements OnInit {
   @Input() task: Task = {
