@@ -8,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
     </mat-toolbar>
     <h1>Your Tasks</h1>
     <div class="tasks">
-      <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+      <app-task
+        *ngFor="let task of tasks"
+        [task]="task"
+      ></app-task>
+      <app-task [isAddTask]="true"></app-task>
     </div>
   `,
-  styles: ['.home-link { color: white; }', 'a { text-decoration: none; }', '.tasks { display:flex; }'],
+  styles: [
+    '.home-link { color: white; }',
+    'a { text-decoration: none; }',
+    '.tasks { display:flex; }',
+  ],
 })
 export class HomeComponent implements OnInit {
   constructor() {}

@@ -4,26 +4,29 @@ import { Task } from '../interfaces';
 @Component({
   selector: 'app-task',
   template: `
-    <div class="task">
+    <div class="task" *ngIf="!isAddTask">
       <h2>{{ task.name }}</h2>
       <p>{{ task.description }}</p>
     </div>
+    <div class="addTask">
+      <button
+        mat-fab
+        color="warn"
+      >
+        <mat-icon class="">delete</mat-icon>
+      </button>
+    </div>
   `,
-  styles: [
-    '.task {padding: 30px}'
-  ]
+  styles: ['.task {padding: 30px}'],
 })
-
 export class TaskComponent implements OnInit {
-  
   @Input() task: Task = {
     name: 'default task',
-    description: 'default description'
+    description: 'default description',
   };
-  
-  constructor() { }
+  @Input() isAddTask = false;
 
-  ngOnInit(): void {
-  }
+  constructor() {}
 
+  ngOnInit(): void {}
 }

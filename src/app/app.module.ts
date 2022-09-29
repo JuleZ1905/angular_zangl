@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MaterialModule } from './material-module';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +19,7 @@ import { TaskComponent } from './task/task.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
