@@ -12,12 +12,17 @@ import { Component, OnInit } from '@angular/core';
       </div>
       <div class="task-view">
         <div class="tasks">
-          <app-task
-            class="task-item"
-            *ngFor="let task of tasks"
-            [task]="task"
-          ></app-task>
-          <app-task [isAddTask]="true"></app-task>
+          <div class="task-list">
+            <app-task
+              class="task-item"
+              *ngFor="let task of tasks"
+              [task]="task"
+            ></app-task>
+          </div>
+          <div class="add-view">
+            <app-task class="add-task" [isAddTask]="true">
+            </app-task>
+          </div>
         </div>
         <div class="v-line"></div>
         <app-edit-task> </app-edit-task>

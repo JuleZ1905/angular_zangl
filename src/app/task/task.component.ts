@@ -9,13 +9,9 @@ import { Task } from '../interfaces';
       <p class="task-desc">{{ task.description }}</p>
       <mat-checkbox class="task-checkbox"></mat-checkbox>
     </div>
-    <div class="addTask">
-      <!-- <button
-        mat-fab
-        color="warn"
-      >
-        <mat-icon class="delete-btn">delete</mat-icon>
-      </button> -->
+    <div class="task add-task" *ngIf="isAddTask">
+      <input type="text">
+      <input type="text">
     </div>
   `,
   styleUrls: ['./task.component.css'],

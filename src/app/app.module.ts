@@ -15,7 +15,7 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
     AppComponent,
     HomeComponent,
     TaskComponent,
-    EditTaskComponent
+    EditTaskComponent,
   ],
   imports: [
     BrowserModule,

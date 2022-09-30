@@ -1,25 +1,41 @@
 .task {
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  align-items: center;
 }
 
 .task-name {
-    width: 30%;
-    margin: 0;
-    margin-left: 10px;
-    overflow: scroll;
+  width: 30%;
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.task-name:hover {
+  overflow: scroll;
 }
 
 .task-desc {
-    width: 65%;
-    margin: 0;
+  width: 65%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.task-desc:hover {
+  overflow: scroll;
 }
 
 .task-checkbox {
-    display: flex;
-    justify-content: right;
-    width: 5%;
-    margin-right: 1%;
+  display: flex;
+  justify-content: right;
+  width: 5%;
+  margin-right: 1%;
+}
+
+.add-task {
+  box-shadow: 0 0 20px 1px lightgrey;
+  margin: 10px;
+  border-radius: 15px;
 }
