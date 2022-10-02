@@ -17,11 +17,10 @@ import { Router } from '@angular/router';
             class="task-item"
             *ngFor="let task of tasks"
             [task]="task"
-            (click)="onSelect(task)"
           ></app-task>
         </div>
         <div class="add-view">
-          <app-task class="add-task" [isAddTask]="true"> </app-task>
+          <app-task class="add-task" [isAddTask]="true"></app-task>
         </div>
       </div>
     </div>
@@ -36,13 +35,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     for (let index = 2; index < 100; index++) {
       this.tasks.push({
-        name: 'taskdefuehfuehfuhefuheufuehfuehfuheufhe' + index,
+        name: 'Task' + index,
         description: 'description ' + index,
       });
     }
-  }
-
-  onSelect(task: any) {
-    this.router.navigate(['/edit-task'], { state: { task: task } });
   }
 }

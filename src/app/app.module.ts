@@ -8,14 +8,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { TaskComponent } from './task/task.component';
-import { EditTaskComponent } from './edit-task/edit-task.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TaskComponent,
-    EditTaskComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,

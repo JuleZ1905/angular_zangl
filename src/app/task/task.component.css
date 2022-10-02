@@ -39,3 +39,11 @@
   margin: 10px;
   border-radius: 15px;
 }
+
+input {
+  margin-right: 30px;
+}
+
+.task-name:hover .task-desc:hover {
+  cursor: pointer;
+}
