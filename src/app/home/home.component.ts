@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Task } from '../interfaces';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +17,7 @@ import { Router } from '@angular/router';
         <div class="task-list">
           <app-task
             class="task-item"
-            *ngFor="let task of tasks"
+            *ngFor="let task of tasks$ | async"
             [task]="task"
           ></app-task>
         </div>
@@ -28,16 +30,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router) {}
-
-  tasks = [{ name: 'task 1', description: 'description 1' }];
+  tasks$: Observable<Task[]>;
+  constructor(private store: Store<{tasks: Task[]}>) {
+    this.tasks$ = store.select('tasks');
+  }
 
   ngOnInit(): void {
-    for (let index = 2; index < 100; index++) {
-      this.tasks.push({
-        name: 'Task' + index,
-        description: 'description ' + index,
-      });
-    }
   }
 }

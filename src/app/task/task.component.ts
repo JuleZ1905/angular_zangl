@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Task } from '../interfaces';
+import { deleteTask, addTask } from '../store/tasks.action';
 
 @Component({
   selector: 'app-task',
@@ -20,12 +22,13 @@ import { Task } from '../interfaces';
 })
 export class TaskComponent implements OnInit {
   @Input() task: Task = {
+    id: 0,
     name: 'default task',
     description: 'default description',
   };
   @Input() isAddTask = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private store: Store<{tasks: Task[]}>) {}
 
   ngOnInit(): void {}
 
@@ -34,13 +37,14 @@ export class TaskComponent implements OnInit {
   }
 
   addTask() {
-    const name = (document.getElementById('name') as HTMLInputElement).value;
-    const desc = (document.getElementById('desc') as HTMLInputElement).value;
-
-    console.log(name, desc);
+    let name = document.getElementById('name') as HTMLInputElement;
+    let desc = document.getElementById('desc') as HTMLInputElement;
+    this.store.dispatch(addTask({ id: Math.floor(Math.random() * 1000000) + 5, name: name.value, description: desc.value }));
+    name.value = '';
+    desc.value = '';
   }
 
   deleteTask() {
-    console.log('delete task');
+    this.store.dispatch(deleteTask(this.task.id));
   }
 }
