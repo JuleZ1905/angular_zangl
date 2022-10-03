@@ -35,6 +35,5 @@ export class HomeComponent implements OnInit {
     this.tasks$ = store.select('tasks');
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }
